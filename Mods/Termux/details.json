@@ -10,5 +10,6 @@
   ],
   "updateTypeString": "apk",
   "briefDescription": "description",
-  "brifVersion": "version"
+  "brifVersion": "version",
+  "images": 4
 }

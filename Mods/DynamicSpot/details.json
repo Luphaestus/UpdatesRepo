@@ -8,6 +8,7 @@
     "project",
     "example"
   ],
+  "images": 7,
   "updateTypeString": "apk",
   "briefDescription": "description",
   "brifVersion": "version"
