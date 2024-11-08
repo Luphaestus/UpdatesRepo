@@ -1,15 +1,14 @@
 {
   "name": "Viper",
-  "author": "Your Name",
-  "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
+  "author": "WSTxda",
+  "version": "7.0",
+  "srcLink": "https://github.com/WSTxda/ViperFX-RE-Releases",
   "keywords": [
-    "sample",
-    "project",
-    "example"
+    "custermization",
+    "apk"
   ],
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
+  "briefDescription": "Audio Mods",
+  "brifVersion": "dded Reverberation options",
   "images": 5
 }

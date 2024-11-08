@@ -1,15 +1,14 @@
 {
   "name": "KSU",
-  "author": "Your Name",
-  "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
+  "author": "tiann",
+  "version": "1.0.1",
+  "srcLink": "https://github.com/tiann/KernelSU",
   "keywords": [
-    "sample",
-    "project",
-    "example"
+    "root",
+    "apk"
   ],
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
+  "briefDescription": "Kernel-based su and root access management.",
+  "brifVersion": "Updated internal libs",
   "images": 5
 }
