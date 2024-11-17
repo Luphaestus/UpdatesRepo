@@ -2,8 +2,8 @@
   "name": "Momo",
   "author": "Luphaestus",
   "version": "1.0.0",
-  "packageName": "com.example.momo",
-  "openName": "com.example.momo",
+  "packageName": "io.github.vvb2060.mahoshojo",
+  "openName":"io.github.vvb2060.mahoshojo",
   "srcLink": "https://github.com/luphaestus/momo-project",
   "keywords": [
     "Tools",

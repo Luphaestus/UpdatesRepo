@@ -2,8 +2,8 @@
   "name": "Viperfx",
   "author": "Luphaestus",
   "version": "1.0.1",
-  "packageName": "com.viperfx",
-  "openName": "com.viperfx",
+  "packageName": "com.wstxda.viper4android",
+  "openName": "com.wstxda.viper4android",
   "srcLink": "https://github.com/luphaestus/viperfx",
   "keywords": [
     "Root",

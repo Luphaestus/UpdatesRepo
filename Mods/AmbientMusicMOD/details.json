@@ -2,8 +2,8 @@
   "name": "AmbientMusicMOD",
   "author": "Luphaestus",
   "version": "1.0.0",
-  "packageName": "com.ambientmusicmod",
-  "openName": "com.ambientmusicmod",
+  "packageName":  "com.kieronquinn.app.ambientmusicmod",
+  "openName": "com.kieronquinn.app.ambientmusicmod",
   "srcLink": "https://github.com/luphaestus/ambient-music-mod",
   "keywords": [
     "Customization",

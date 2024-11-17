@@ -2,8 +2,8 @@
   "name": "Materialfiles",
   "author": "Luphaestus",
   "version": "1.0.0",
-  "packageName": "com.materialfiles",
-  "openName": "com.materialfiles",
+  "packageName": "com.zhanghai.android.files",
+  "openName": "com.zhanghai.android.files",
   "srcLink": "https://github.com/luphaestus/materialfiles",
   "keywords": [
     "Tools",
