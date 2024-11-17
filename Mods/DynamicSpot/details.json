@@ -10,9 +10,5 @@
     "Apk"
   ],
   "images": 7,
-  "updateTypeString": "apk",
-
-
-  "briefDescription": "Apple Island for Android",
-  "brifVersion": "Added some music cover animations to premium animations."
+  "updateTypeString": "apk"
 }

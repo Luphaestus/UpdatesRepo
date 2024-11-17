@@ -7,10 +7,8 @@
   "srcLink": "https://github.com/WSTxda/ViperFX-RE-Releases",
   "keywords": [
     "Customization",
-    "apk"
+    "Apk"
   ],
   "images": 5,
-  "updateTypeString": "apk",
-  "briefDescription": "Audio Mods",
-  "brifVersion": "Added Reverberation options"
+  "updateTypeString": "apk"
 }

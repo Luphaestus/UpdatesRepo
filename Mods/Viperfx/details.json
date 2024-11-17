@@ -6,14 +6,11 @@
   "openName": "com.wstxda.viper4android",
   "srcLink": "https://github.com/luphaestus/viperfx",
   "keywords": [
-    "Root",
     "Customization",
     "Apk"
   ],
   "images": 5,
-  "updateTypeString": "apk",
-  "briefDescription": "ViperFX is an audio enhancement tool for Android.",
-  "brifVersion": "1.0.1"
+  "updateTypeString": "apk"
 }
 
 

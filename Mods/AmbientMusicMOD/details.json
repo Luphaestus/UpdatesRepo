@@ -7,13 +7,10 @@
   "srcLink": "https://github.com/luphaestus/ambient-music-mod",
   "keywords": [
     "Customization",
-    "Root",
     "Apk"
   ],
   "images": 0,
-  "updateTypeString": "apk",
-  "briefDescription": "This mod provides ambient music customization.",
-  "brifVersion": "1.0.0"
+  "updateTypeString": "apk"
 }
 
 

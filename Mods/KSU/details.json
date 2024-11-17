@@ -6,12 +6,9 @@
   "openName": "com.tiann.kernelsu",
   "srcLink": "https://github.com/tiann/KernelSU",
   "keywords": [
-    "Root",
     "Tools",
-    "apk"
+    "Apk"
   ],
   "images": 5,
-  "updateTypeString": "apk",
-  "briefDescription": "Kernel-based su and root access management.",
-  "brifVersion": "Updated internal libs."
+  "updateTypeString": "apk"
 }

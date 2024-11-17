@@ -7,11 +7,8 @@
   "srcLink": "https://github.com/luphaestus/materialfiles",
   "keywords": [
     "Tools",
-    "Root",
     "Apk"
   ],
   "images": 0,
-  "updateTypeString": "apk",
-  "briefDescription": "A brief description of Materialfiles.",
-  "brifVersion": "1.0.0"
+  "updateTypeString": "apk"
 }

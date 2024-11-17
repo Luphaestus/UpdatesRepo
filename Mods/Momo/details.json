@@ -7,11 +7,8 @@
   "srcLink": "https://github.com/luphaestus/momo-project",
   "keywords": [
     "Tools",
-    "Root",
     "Apk"
   ],
   "images": 5,
-  "updateTypeString": "apk",
-  "briefDescription": "A brief description of Momo.",
-  "brifVersion": "1.0.0"
+  "updateTypeString": "apk"
 }
