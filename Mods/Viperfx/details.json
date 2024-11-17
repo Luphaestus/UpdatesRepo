@@ -1,15 +1,19 @@
 {
   "name": "Viperfx",
-  "author": "Your Name",
-  "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
+  "author": "Luphaestus",
+  "version": "1.0.1",
+  "packageName": "com.viperfx",
+  "openName": "com.viperfx",
+  "srcLink": "https://github.com/luphaestus/viperfx",
   "keywords": [
     "Root",
     "Customization",
     "Apk"
   ],
+  "images": 5,
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
-  "images": 5
+  "briefDescription": "ViperFX is an audio enhancement tool for Android.",
+  "brifVersion": "1.0.1"
 }
+
+

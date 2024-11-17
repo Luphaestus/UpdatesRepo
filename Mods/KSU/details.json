@@ -2,14 +2,16 @@
   "name": "KSU",
   "author": "tiann",
   "version": "1.0.1",
+  "packageName": "com.tiann.kernelsu",
+  "openName": "com.tiann.kernelsu",
   "srcLink": "https://github.com/tiann/KernelSU",
   "keywords": [
     "Root",
     "Tools",
     "apk"
   ],
+  "images": 5,
   "updateTypeString": "apk",
   "briefDescription": "Kernel-based su and root access management.",
-  "brifVersion": "Updated internal libs",
-  "images": 5
+  "brifVersion": "Updated internal libs."
 }

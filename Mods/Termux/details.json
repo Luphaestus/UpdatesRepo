@@ -1,16 +1,19 @@
 {
   "name": "Termux",
-  "author": "Your Name",
-  "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
-  "fileLink": "https:/example.com",
+  "author": "Fredrik Fornwall",
+  "version": "0.118.0",
+  "packageName": "com.termux",
+  "openName": "com.termux",
+  "srcLink": "https://play.google.com/store/apps/details?id=com.termux",
   "keywords": [
     "Root",
     "Tools",
     "Apk"
   ],
+  "images": 4,
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
-  "images": 4
+  "briefDescription": "Terminal emulator for Android",
+  "brifVersion": "Updated terminal emulation and added new packages."
 }
+
+

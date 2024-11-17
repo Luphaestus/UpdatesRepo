@@ -2,13 +2,15 @@
   "name": "Viper",
   "author": "WSTxda",
   "version": "7.0",
+  "packageName": "com.viperfx",
+  "openName": "com.viperfx",
   "srcLink": "https://github.com/WSTxda/ViperFX-RE-Releases",
   "keywords": [
     "Customization",
     "apk"
   ],
+  "images": 5,
   "updateTypeString": "apk",
   "briefDescription": "Audio Mods",
-  "brifVersion": "dded Reverberation options",
-  "images": 5
+  "brifVersion": "Added Reverberation options"
 }

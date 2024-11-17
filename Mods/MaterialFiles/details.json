@@ -1,15 +1,17 @@
 {
   "name": "Materialfiles",
-  "author": "Your Name",
+  "author": "Luphaestus",
   "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
+  "packageName": "com.materialfiles",
+  "openName": "com.materialfiles",
+  "srcLink": "https://github.com/luphaestus/materialfiles",
   "keywords": [
     "Tools",
     "Root",
     "Apk"
   ],
+  "images": 0,
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
-  "images": 0
+  "briefDescription": "A brief description of Materialfiles.",
+  "brifVersion": "1.0.0"
 }

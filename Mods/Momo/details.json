@@ -1,15 +1,17 @@
 {
   "name": "Momo",
-  "author": "Your Name",
+  "author": "Luphaestus",
   "version": "1.0.0",
-  "srcLink": "https://github.com/yourusername/sample-project",
+  "packageName": "com.example.momo",
+  "openName": "com.example.momo",
+  "srcLink": "https://github.com/luphaestus/momo-project",
   "keywords": [
     "Tools",
     "Root",
     "Apk"
   ],
+  "images": 5,
   "updateTypeString": "apk",
-  "briefDescription": "description",
-  "brifVersion": "version",
-  "images": 5
+  "briefDescription": "A brief description of Momo.",
+  "brifVersion": "1.0.0"
 }
