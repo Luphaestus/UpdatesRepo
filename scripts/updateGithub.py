@@ -7,13 +7,18 @@ from tqdm import tqdm
 
 rootPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+"/Mods"
 repos = [
+        #modules
+        {"github": "PerformanC/ReZygisk"},
+
+        #aps
         {"github": "KieronQuinn/AmbientMusicMod"},
         {"github": "reveny/Android-Native-Root-Detector"},
         {"github": "AndroidAudioMods/ViPER4Android"},
         {'github': 'WSTxda/ViperFX-RE-Releases'},
-        {"github": "tiann/KernelSU"        , "file":"*apk", "version":"v1.0.1"},
+        {"github": "KieronQuinn/PixelLauncherMods"},
         {"github": "zhanghai/MaterialFiles", "file":"*apk"},
         {"github": "termux/termux-app"     , "file":"*v8a*"},
+        {"github": "tiann/KernelSU"        , "file":"*apk", "version":"v1.0.1"},
 ]
 
 def getDetailsJson(path: str) -> dict:
