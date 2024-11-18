@@ -4,21 +4,27 @@ import re
 import os
 import json
 from tqdm import tqdm
+import argparse
 
 rootPath = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))+"/Mods"
 repos = [
-        #modules
-        {"github": "PerformanC/ReZygisk"},
+    #twrp
+    {"github": "corsicanu/TWRP_Bootlogo_patcher"},
 
-        #aps
-        {"github": "KieronQuinn/AmbientMusicMod"},
-        {"github": "reveny/Android-Native-Root-Detector"},
-        {"github": "AndroidAudioMods/ViPER4Android"},
-        {'github': 'WSTxda/ViperFX-RE-Releases'},
-        {"github": "KieronQuinn/PixelLauncherMods"},
-        {"github": "zhanghai/MaterialFiles", "file":"*apk"},
-        {"github": "termux/termux-app"     , "file":"*v8a*"},
-        {"github": "tiann/KernelSU"        , "file":"*apk", "version":"v1.0.1"},
+    # modules
+    {"github": "PerformanC/ReZygisk",                  "formatName": False},
+    {"github": "JingMatrix/LSPosed",                   "require": "zygisk"},
+
+    # apps
+    {"github": "KieronQuinn/AmbientMusicMod"},
+    {"github": "reveny/Android-Native-Root-Detector"}, 
+    {"github": "KieronQuinn/PixelLauncherMods"},       
+    {"github": "AndroidAudioMods/ViPER4Android",       "formatName": False,   "formatAuthor": False},
+    {"github": "WSTxda/ViperFX-RE-Releases",           "formatName": False,   "formatAuthor": False},
+    {"github": "Dr-TSNG/Hide-My-Applist",              "require": "lsposed"},
+    {"github": "zhanghai/MaterialFiles",               "file": "*apk"},
+    {"github": "termux/termux-app",                    "file": "*v8a*"},
+    {"github": "tiann/KernelSU",                       "file": "*apk",        "version": "v1.0.1"},
 ]
 
 def getDetailsJson(path: str) -> dict:
@@ -29,7 +35,10 @@ def getDetailsJson(path: str) -> dict:
         return {}
 
 def saveDetailsJson(path: str, data: dict) -> None:
-    with open(f"{rootPath}/{path}/details.json", "w") as file:
+    details_path = f"{rootPath}/{path}/details.json"
+    if os.path.exists(details_path):
+        os.remove(details_path)
+    with open(details_path, "w") as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
 
 def setDetails(key: str, value: str, details: dict) -> None:
@@ -56,20 +65,6 @@ def updateFileList() -> str:
     return os.path.join(rootPath, "list")
 
 def getREADME(repo: str = "revanced-apks/build-apps") -> str:
-    """
-    Fetches the README file content from a specified GitHub repository.
-    This function attempts to locate and retrieve the README file from the given repository.
-    The README file can have different capitalizations (e.g., README.md, ReadMe, readme)
-    and may not necessarily have the .md extension. The function parses the repository's
-    HTML to find the correct path to the README file and then fetches its content.
-    Args:
-        repo (str): The GitHub repository in the format "owner/repo". Defaults to "revanced-apks/build-apps".
-    Returns:
-        str: The content of the README file.
-    Raises:
-        Exception: If the README file or necessary elements cannot be found, or if there is an issue with the HTTP requests.
-    """
-
     url = f"https://github.com/{repo}"
     response = requests.get(url, allow_redirects=True)
     if response.status_code == 200:
@@ -118,12 +113,6 @@ def getFile(html: str, filename_pattern: str, path: str) -> str:
         if len(matched_links) == 1:
             file_url = f"https://github.com{matched_links[0]}"
             local_file_path = os.path.join(rootPath, path, "file")
-            if os.path.exists(local_file_path):
-                local_md5 = os.popen(f"md5 -q {local_file_path}").read().strip()
-                remote_md5 = os.popen(f"curl -sL {file_url} | md5 -q").read().strip()
-                if local_md5 == remote_md5:
-                    return local_file_path
-            
             file_response = requests.get(file_url, allow_redirects=True)
             if file_response.status_code == 200:
                 file_path = os.path.join(rootPath, path, "file")
@@ -149,11 +138,31 @@ def getVersion(url: str) -> str:
     version = url.split('/')[-1]
     return version
 
-def getAuthor(url: str) -> str:
-    return url.split('/')[-2].capitalize()
+def formatString(string: str) -> str:
+    string = string.replace("-", " ").replace("_", " ")
+    formatedString = ""
+    for index, char in enumerate(string):
+        if char.isupper() and not index == 0 and not string[index-1].isupper() and not string[index-1] == " ":
+            formatedString += " "
+        formatedString += char
+    capitlizedString = ""
+    for index, char in enumerate(formatedString):
+        if index == 0: capitlizedString += char.capitalize()
+        elif formatedString[index-1] == " ": capitlizedString += char.capitalize()
+        else: capitlizedString += char
+    return capitlizedString
 
-def getName(url: str) -> str:
-    return url.split('/')[-1]
+def getAuthor(url: str, formated: bool = False) -> str:
+    author = url.split('/')[-2]
+    if formated:
+        author = formatString(author)
+    return author
+
+def getName(url: str, formated: bool = False) -> str:
+    name = url.split('/')[-1]
+    if formated:
+        name = formatString(name)
+    return name
 
 def getAPKPackageName(path: str) -> str:
     aapt_output = os.popen(f"aapt dump badging {rootPath}/{path}/file").read()
@@ -166,68 +175,63 @@ def getAPKPackageName(path: str) -> str:
 def getType(path:str) -> str:
     fullPath = os.path.join(rootPath, path, "file")
     unzip_output = os.popen(f"unzip -l {fullPath}").read()
-
-    if "classes.dex" in unzip_output:
+    if "AndroidManifest.xml" in unzip_output:
         return "apk"
+    if "module.prop" in unzip_output:
+        return "module"
+    else:
+        return "twrp"
 
 def getNumbImages(path: str) -> int:
     fullPath = os.path.join(rootPath, path)
     return len([name for name in os.listdir(fullPath) if os.path.isfile(os.path.join(fullPath, name)) and re.match(r'^\d+\.jpg$', name)])
 
 
+parser = argparse.ArgumentParser(description="Update GitHub repositories.")
+parser.add_argument('--force', action='store_true', help="Force update the repositories.")
+args = parser.parse_args()
 
-total_steps = 14 * len(repos)  
-progress_bar = tqdm(total=total_steps, desc="Updating repositories", unit="step")
+force_update = args.force 
 
-
-for repo in repos: 
+progress_bar = tqdm(repos, desc="Updating repositories")
+for repo in progress_bar:
     repo_name = getName(repo["github"])
     progress_bar.set_description(f"Updating {repo_name}")
     try:
         os.makedirs(os.path.join(rootPath, repo_name), exist_ok=True)
-        progress_bar.update(1)
 
         details = getDetailsJson(repo_name)
-        progress_bar.update(1)
         response = getHTML(repo["github"], repo.get("version", None))
-        progress_bar.update(1)
+
+        if not force_update and details.get("version") == getVersion(response.url):
+            continue
 
         getFile(response.text, repo.get("file", ""), repo_name)
-        progress_bar.update(1)
         repo["type"] = getType(repo_name)
-        progress_bar.update(1)
 
-        setDetails("name", repo_name, details)
-        progress_bar.update(1)
-        setDetails("author", getAuthor(repo["github"]), details)
-        progress_bar.update(1)
+        setDetails("name", getName(repo["github"], repo.get("formatName", True)), details)
+        setDetails("author", getAuthor(repo["github"], repo.get("formatAuthor", True)), details)
         setDetails("version", getVersion(response.url), details)
-        progress_bar.update(1)
         setDetails("updateTypeString", repo['type'], details)
-        progress_bar.update(1)
-        if repo["type"] == "apk": 
-            setDetails("openName", getAPKPackageName(repo_name), details)
-            progress_bar.update(1)
-        if repo["type"] == "apk": 
-            setDetails("packageName", getAPKPackageName(repo_name), details)
-            progress_bar.update(1)
         setDetails("srcLink", f"https://github.com/{repo['github']}" ,details)
-        progress_bar.update(1)
-        setDetails("README", getREADME(repo["github"]), details)
-        progress_bar.update(1)
-        setDetails("changeLog", getChangeLog(response.text), details)
-        progress_bar.update(1)
-        details["images"] = getNumbImages(repo_name)
-        progress_bar.update(1)
+        if "keywords" not in details: details["keywords"] = [repo["type"]]
 
-        if "keywords" not in details:
-            details["keywords"] = [repo["type"]]
+
+        if "require" in repo: details["require"] = repo["require"]
+        if repo["type"] == "apk": setDetails("openName", getAPKPackageName(repo_name), details)
+        if repo.get("require") == "lsposed": setDetails("openName", "com.lspd", details)
+        if repo["type"] == "apk": setDetails("packageName", getAPKPackageName(repo_name), details)
+
+        details["images"] = getNumbImages(repo_name)
+        setDetails("README", getREADME(repo["github"]), details)
+        setDetails("changeLog", getChangeLog(response.text), details)
         
         saveDetailsJson(repo_name, details)
-        progress_bar.update(1)
 
     except Exception as e:
         print(f"\033[91m{e}\033[0m")
+        raise e
         continue
+
 updateFileList()
 progress_bar.close()

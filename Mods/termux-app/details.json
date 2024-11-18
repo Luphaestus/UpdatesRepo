@@ -1,6 +1,6 @@
 {
-    "name": "termux-app",
-    "author": "Termux",
+    "name": "Termux App ",
+    "author": "Termux ",
     "version": "v0.118.1",
     "updateTypeString": "apk",
     "openName": "com.termux",

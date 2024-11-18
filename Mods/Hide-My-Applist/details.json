@@ -1,0 +1,16 @@
+{
+    "name": "Hide My Applist",
+    "author": "Dr TSNG",
+    "version": "V3.3",
+    "updateTypeString": "apk",
+    "srcLink": "https://github.com/Dr-TSNG/Hide-My-Applist",
+    "keywords": [
+        "apk"
+    ],
+    "require": "lsposed",
+    "openName": "com.lspd",
+    "packageName": "com.tsng.hidemyapplist",
+    "images": 0,
+    "README": "# Hide My Applist\n\n[![Stars](https://img.shields.io/github/stars/Dr-TSNG/Hide-My-Applist?label=Stars)](https://github.com/Dr-TSNG)\n[![Crowdin](https://badges.crowdin.net/hide-my-applist/localized.svg)](https://crowdin.com/project/hide-my-applist)\n[![Build](https://img.shields.io/github/actions/workflow/status/Dr-TSNG/Hide-My-Applist/main.yml?branch=master&logo=github)](https://github.com/Dr-TSNG/Hide-My-Applist/actions)\n[![Release](https://img.shields.io/github/v/release/Dr-TSNG/Hide-My-Applist?label=Release)](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest)\n[![Download](https://img.shields.io/github/downloads/Dr-TSNG/Hide-My-Applist/total)](https://github.com/Dr-TSNG/Hide-My-Applist/releases/latest)\n[![Channel](https://img.shields.io/badge/Telegram-Channel-blue.svg?logo=telegram)](https://t.me/HideMyApplist)\n[![License](https://img.shields.io/github/license/Dr-TSNG/Hide-My-Applist?label=License)](https://choosealicense.com/licenses/gpl-3.0/)\n\n![banner](banner.png)\n\n- English  \n- [中文（简体）](README_zh_CN.md)\n\n## About this module\n\nAlthough it's bad practice to detect the installation of specific apps, not every app using root provides random package name support. In this case, if apps related to root (such as Fake Location and Storage Isolation) are detected, it is tantamount to detecting that the device is rooted.\n\nAdditionally, some apps use various loopholes to acquire your app list, in order to use it as fingerprinting data or for other nefarious purposes.\n\nThis module can work as an Xposed module to hide apps or reject app list requests, and provides some methods to test whether you have hidden your app list properly.\n\n## Translation Contributing\nYou can contribute translation [here](https://crowdin.com/project/hide-my-applist).\n\n## Update Log\n[Reference to the release page](https://github.com/Dr-TSNG/Hide-My-Applist/releases)  \n",
+    "changeLog": "<p>Support Android 15<br>\nFix possible crash because of Data Isolation<br>\nImprove compatibility</p>\n<h1></h1>\n<p>支持 Android 15<br>\n修复 Data Isolation 功能可能造成的闪退<br>\n增强兼容性</p>"
+}
