@@ -8,6 +8,6 @@
     "changeLog": "<h3>Removed (breaking changes)</h3>\n<ul>\n<li>Magisk Alpha support</li>\n</ul>\n<h3>Updated</h3>\n<ul>\n<li>Zygisk API to v4</li>\n<li>LSplt</li>\n</ul>\n<h3>Merged</h3>\n<ul>\n<li>Zygiskd C99 branch into main</li>\n</ul>\n<h3>Added</h3>\n<ul>\n<li>Maps hiding</li>\n<li>Chinese README</li>\n<li>APatch support</li>\n</ul>\n<h3>Improved</h3>\n<ul>\n<li>Zygiskd by re-writing to C.</li>\n<li>README</li>\n</ul>",
     "images": 0,
     "keywords": [
-        null
+        "module"
     ]
 }
