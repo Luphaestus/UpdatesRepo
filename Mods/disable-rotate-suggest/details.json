@@ -1,0 +1,15 @@
+{
+    "name": "Disable Rotate Suggest ",
+    "author": "SAPTeam DEV",
+    "version": "v1.0",
+    "updateTypeString": "module",
+    "srcLink": "https://github.com/SAPTeamDEV/disable-rotate-suggest",
+    "keywords": [
+        "Module"
+    ],
+    "images": 0,
+    "README": "# Disable Rotation Suggest\nPermanently disables the rotate screen suggestion feature in Android P+ AOSP-Like roms\nworks in LOS, Pixel Experience and other AOSP roms.\n\n## How it Works?\nAndroid secure settings has a key called `show_rotation_suggestions` and it has True value by default\n\nYou can turn this Feature off using this command:\n```\nsettings put secure show_rotation_suggestions 0\n```\nBut after each restart, this value RESETs to Default value. This module changes that setting to `0` after Boot Complete to keep this feature off.\n\n## Installation\nThis module is compatible to Magisk v20.4+ and it have UpdateJson api for Updating within Magisk Manager.\n \n## Credits \n\n- [Magisk](https://github.com/topjohnwu/Magisk/): makes all these possible\n- [MMT-Extended](https://github.com/Zackptg5/MMT-Extended/): created base installer scripts\n\nThis module created with the [Magisk-Module-Template](https://github.com/SAPTeamDEV/Magisk-Module-Template) automation engine v1.3.\n\n## License\n\nThis Project is licensed under the **GNU General Public License v2 (https://raw.githubusercontent.com/SAPTeamDEV/disable-rotate-suggest/HEAD/GPL-2)** (https://www.gnu.org/licenses/old-licenses/gpl-2.0.html).\n",
+    "changeLog": "<h3>Changelog</h3>\n<ul>\n<li>Initial release.</li>\n</ul>",
+    "READMEsummary": "Permanently disables the rotate screen suggestion feature in Android P+ AOSP-Like roms.",
+    "changeLogSummary": "Changelog  Initial release: Initial release."
+}

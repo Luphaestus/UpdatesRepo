@@ -1,0 +1,15 @@
+{
+    "name": "Riru Clipboard Whitelist ",
+    "author": "Kr328",
+    "version": "v26",
+    "updateTypeString": "module",
+    "srcLink": "https://github.com/Kr328/Riru-ClipboardWhitelist",
+    "keywords": [
+        "Module"
+    ],
+    "images": 0,
+    "README": "# Riru - Clipboard Whitelist\n\nA module of [Riru](https://github.com/RikkaApps/Riru)/[Zygisk](https://github.com/topjohnwu/zygisk-module-sample). Allowing apps to access the clipboard in the background on Android 10.\n\n## Requirements\n\n* Zygote inject framework installed\n  - Riru >= 26.0\n  - Zygisk\n* Android 10+\n\n\n## Feature\n\nAllowing apps to access the clipboard in the background on Android 10+.\n\n\n## Multi-User Support\n\nAdd \"Clipboard\" app to other user and configure it.\n\n## Build\n\n1. Install JDK, Android SDK\n\n2. Configure SDK path in local.properties \n\n   ```properties\n   sdk.dir=/path/to/android/sdk\n   ```\n\n3. Configure built-in manager app signing in signing.properties\n\n   ```properties\n   keystore.path=/path/to/your/keystore.jks\n   keystore.password=<keystore password>\n   key.alias=<key alias>\n   key.password=<key password>\n   ```\n\n4. Run build command \n\n    ``` bash \n    ./gradlew module:assembleRelease\n    ```\n    \n4. Pick `<injector>-clipboard-whitelist-<version>.zip` from `module/build/outputs/magisk/<injector>/<build-type>`\n",
+    "changeLog": "<h2>What's Changed</h2>\n<ul>\n<li>Chore: bump dependencies by <a class=\"user-mention notranslate\" data-hovercard-type=\"user\" data-hovercard-url=\"/users/Kr328/hovercard\" data-octo-click=\"hovercard-link-click\" data-octo-dimensions=\"link_type:self\" href=\"https://github.com/Kr328\">@Kr328</a> in <a class=\"issue-link js-issue-link\" data-error-text=\"Failed to load title\" data-id=\"1955751873\" data-permission-text=\"Title is private\" data-url=\"https://github.com/Kr328/Riru-ClipboardWhitelist/issues/39\" data-hovercard-type=\"pull_request\" data-hovercard-url=\"/Kr328/Riru-ClipboardWhitelist/pull/39/hovercard\" href=\"https://github.com/Kr328/Riru-ClipboardWhitelist/pull/39\">#39</a></li>\n</ul>\n<p><strong>Full Changelog</strong>: <a class=\"commit-link\" href=\"https://github.com/Kr328/Riru-ClipboardWhitelist/compare/v24...v26\"><tt>v24...v26</tt></a></p>",
+    "READMEsummary": "Riru - Clipboard Whitelist A module of Riru/Zygisk.",
+    "changeLogSummary": "Chore: bump dependencies by @Kr328 in #39  Full Changelog: v24.."
+}

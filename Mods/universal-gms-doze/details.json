@@ -1,0 +1,15 @@
+{
+    "name": "Universal Gms Doze ",
+    "author": "Gloeyisk",
+    "version": "1.9.1",
+    "updateTypeString": "module",
+    "srcLink": "https://github.com/gloeyisk/universal-gms-doze",
+    "keywords": [
+        "Module"
+    ],
+    "images": 0,
+    "README": "# Universal GMS Doze\n\n## Overview\n- Patches Google Play services app and certain processes/services to be able to use battery optimization\n- Support API 23 or later\n- Support Magisk and KernelSU\n\n## Download Links (https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/HEAD/Archive)\n- [GitHub Releases](https://kutt.it/3FfNzX)\n- [Mediafire](https://app.mediafire.com/16j39nr5uxi4l)\n- [MEGA](https://kutt.it/bE35Ld)\n- [SourceForge](https://kutt.it/69oMi9)\n\n## Troubleshootings\n- Command-line for check optimization (https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/HEAD/with module installed):\n```\n> su\n> gmsc\n```\n- Command-line for check optimization (https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/HEAD/in general):   \nThere's a line written `Whitelist (https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/HEAD/except idle) system apps:` and if `com.google.android.gms` line does not exist it means Google Play services is optimized).\n```\n> su\n> dumpsys deviceidle\n```\n- Command-line for fix delayed incoming messages issue:   \nIf the issue still persist, move the app to Not Optimized battery usage.\n```\n> su\n> cd /data/data\n> find . -type f -name '*gms*' -delete\n```\n- Command-line for disable Find My Device (https://raw.githubusercontent.com/gloeyisk/universal-gms-doze/HEAD/optional):\n```\n> su\n> pm disable com.google.android.gms/com.google.android.gms.mdm.receivers.MdmDeviceAdminReceiver\n```\n\n## Credits\n- topjohnwu / Magisk - Magisk Module Template\n- JumbomanXDA, MrCarb0n / Script fixer and helper\n\n## Extras\n- Donations: [PayPal](https://paypal.me/gloeyisk) - [LiberaPay](https://liberapay.com/gloeyisk) - [Ko-fi](https://ko-fi.com/gloeyisk)\n- Source Code: [GitHub](https://github.com/gloeyisk/universal-gms-doze)\n- Support Thread: [XDA Developers](https://forum.xda-developers.com/apps/magisk/module-universal-gms-doze-t3853710)\n",
+    "changeLog": "<h2>Change Log:</h2>\n<ul>\n<li>Improved installation (Magisk Live and KernelSU)</li>\n<li>Fixed root method detections</li>\n<li>Fixed uninstaller script</li>\n</ul>\n<div class=\"snippet-clipboard-content notranslate position-relative overflow-auto\" data-snippet-clipboard-copy-content=\"   File: gms_1.9.1.zip\n  SHA-1: 1e13977c75c9756b6faa0bf9b4a333027ac0b1a1\nSHA-256: e5dfc0d5dedced97248c70c94bbfc34af6e7f7fcb9ee59d569e8c6c51d5d112d\"><pre class=\"notranslate\"><code>   File: gms_1.9.1.zip\n  SHA-1: 1e13977c75c9756b6faa0bf9b4a333027ac0b1a1\nSHA-256: e5dfc0d5dedced97248c70c94bbfc34af6e7f7fcb9ee59d569e8c6c51d5d112d\n</code></pre>",
+    "READMEsummary": "Universal GMS Doze patches Google Play services app and certain processes/services to be able to use battery optimization.",
+    "changeLogSummary": "Improved installation (Magisk Live and KernelSU) Fixed root method detections Fixed uninstaller script."
+}
