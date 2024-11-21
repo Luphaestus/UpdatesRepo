@@ -1,11 +1,11 @@
 {
-    "name": "Material Files",
+    "name": "Material Files ",
     "author": "Zhanghai",
     "version": "v1.7.4",
     "updateTypeString": "apk",
     "srcLink": "https://github.com/zhanghai/MaterialFiles",
     "keywords": [
-        "apk"
+        "Apk"
     ],
     "openName": "me.zhanghai.android.files",
     "packageName": "me.zhanghai.android.files",

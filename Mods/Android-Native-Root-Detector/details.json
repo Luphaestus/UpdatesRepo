@@ -1,11 +1,11 @@
 {
-    "name": "Android Native Root Detector",
+    "name": "Android Native Root Detector ",
     "author": "Reveny",
     "version": "v6.5.2",
     "updateTypeString": "apk",
     "srcLink": "https://github.com/reveny/Android-Native-Root-Detector",
     "keywords": [
-        "apk"
+        "Apk"
     ],
     "openName": "com.reveny.nativecheck",
     "packageName": "com.reveny.nativecheck",
